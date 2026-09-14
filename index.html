@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Appointment Confirmed - eClinic</title>
+
+</head>
+
+<body>
+
+    <h1>eClinic</h1>
+
+    <h2>Appointment Confirmed ✅</h2>
+
+    <p>Your appointment has been successfully booked.</p>
+
+    <hr>
+
+    <p>
+        <strong>Full Name:</strong>
+        {{ full_name }}
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        {{ email }}
+    </p>
+
+    <p>
+        <strong>Date:</strong>
+        {{ appointment_date }}
+    </p>
+
+    <p>
+        <strong>Time:</strong>
+        {{ appointment_time }}
+    </p>
+
+    <p>
+        <strong>Reason:</strong>
+        {{ reason }}
+    </p>
+
+    <h2>
+        Appointment Code:
+        {{ appointment_code }}
+    </h2>
+
+    <p>
+        Please save your appointment code.
+        You will need this code on your appointment date.
+    </p>
+
+    <a href="/">
+        Back to Home
+    </a>
+
+</body>
+
+</html>

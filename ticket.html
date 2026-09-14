@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Appointment Ticket - eClinic</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef3f8;
+        }
+
+        .container {
+            width: 550px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: linear-gradient(120deg, #1565c0, #1976d2);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header p {
+            margin-bottom: 0;
+        }
+
+        .success {
+            text-align: center;
+            padding: 25px 25px 5px;
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ticket {
+            padding: 30px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 13px 0;
+        }
+
+        .label {
+            color: #777;
+        }
+
+        .value {
+            font-weight: bold;
+            color: #333;
+            text-align: right;
+        }
+
+        .code {
+            margin-top: 25px;
+            padding: 25px;
+            background: #fff3f3;
+            border: 2px dashed #d32f2f;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .code p {
+            margin: 0 0 10px;
+            color: #777;
+        }
+
+        .code h1 {
+            color: #d32f2f;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        .buttons {
+            padding: 0 30px 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons a,
+        .buttons button {
+            flex: 1;
+            padding: 13px;
+            text-align: center;
+            border-radius: 6px;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .home {
+            background: #1565c0;
+            color: white;
+        }
+
+        .print {
+            background: #d32f2f;
+            color: white;
+        }
+
+        @media print {
+
+            .buttons {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0 auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="header">
+
+            <h1>
+                eClinic
+            </h1>
+
+            <p>
+                Clinic Management System
+            </p>
+
+        </div>
+
+
+        <div class="success">
+
+            ✓ APPOINTMENT CONFIRMED
+
+        </div>
+
+
+        <div class="ticket">
+
+
+            <div class="row">
+
+                <span class="label">
+                    Patient Name
+                </span>
+
+                <span class="value">
+                    {{ first_name }} {{ last_name }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Email
+                </span>
+
+                <span class="value">
+                    {{ email }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Doctor
+                </span>
+
+                <span class="value">
+                    {{ doctor }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Department
+                </span>
+
+                <span class="value">
+                    {{ department }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Date
+                </span>
+
+                <span class="value">
+                    {{ appointment_date }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Time
+                </span>
+
+                <span class="value">
+                    {{ appointment_time }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Reason
+                </span>
+
+                <span class="value">
+                    {{ reason }}
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Status
+                </span>
+
+                <span class="value" style="color:#2e7d32;">
+                    CONFIRMED
+                </span>
+
+            </div>
+
+
+            <div class="code">
+
+                <p>
+                    YOUR APPOINTMENT CODE
+                </p>
+
+                <h1>
+                    {{ appointment_code }}
+                </h1>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="/dashboard" class="home">
+                Dashboard
+            </a>
+
+            <button
+                class="print"
+                onclick="window.print()"
+            >
+                Print Ticket
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
